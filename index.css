@@ -1,0 +1,136 @@
+div.bodyStyle {
+    margin: 1rem;
+    color: brown;
+    border-radius: 1rem;
+    border-style: solid;
+    height:25rem;
+    padding: 2rem;
+    display:flex;
+    justify-content:center;
+}
+div.box{
+    color: brown;
+    border-radius: 0.3rem;
+    border-style: solid;
+    height:inherit;
+    width: 25rem;
+    float: left;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background-color:rgb(240,240,240);
+}
+div.insideBox{
+    padding: 1rem;
+}
+p.spacing{
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+}
+button.getALoan{
+    width:  15rem;
+    height: 2.5rem;
+    cursor: pointer;
+    background-color: #A1BB87;
+    margin-top: 12rem;
+    margin-left: 3.3rem; 
+}
+button.workBtn{
+    width:  7rem;
+    height: 2.5rem;
+    cursor: pointer;
+    background-color: #C8BF6D;
+    margin-top: 5.5rem;
+    margin-left: 3.3rem; 
+}
+button.workBtn2{
+    width:  7rem;
+    height: 2.5rem;
+    cursor: pointer;
+    background-color: #5658ca;
+    margin-top: 5.5rem;
+    margin-left: 3.3rem; 
+}
+select.dropdown{
+    width:  20rem;
+    height: 2.5rem;
+    margin-left: 1.5rem; 
+    cursor: pointer;
+}
+
+div.bigBox{
+    margin-top: 0.5;
+    margin-bottom: 1;
+    margin-right: 7.2rem;
+    margin-left: 7.2rem;
+    color: brown;
+    border-radius: 1rem;
+    border-style: solid;
+    height:12rem;
+    padding: 2rem;
+    display:flex;
+    justify-content: center;
+}
+div.imgInside{
+    width:20rem;
+    height: 10rem;
+    border-radius: 0.3rem;
+    border-style: solid;
+    border-color: #5658ca;
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    float: left;
+}
+div.pcBox{
+    height: 10rem;
+    width: 25rem;
+    border-radius: 0.3rem;
+    border-style: solid;
+    border-color: #5658ca;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    float: left;
+    display:flex;
+    justify-content: center;
+}
+div.buypcBox{
+    width:20rem;
+    height: 10rem;
+    border-radius: 0.3rem;
+    border-style: solid;
+    border-color: #5658ca;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    float: left;
+    display:flex;
+    justify-content: center;
+}
+button.buyNow{
+    width:  15rem;
+    height: 2.5rem;
+    cursor: pointer;
+    background-color: #A1BB87;
+    float: left;
+    margin-left: 2.5;
+    margin-top: 2rem;
+}
+button.payBack{
+    width:  15rem;
+    height: 2.5rem;
+    cursor: pointer;
+    background-color: #A1BB87;
+    margin-left: 4rem; 
+    display: none;
+}
+div.forHiddenButton{
+    height: 2.5rem;
+    margin-top: 5rem;
+}
+img.imagePc{
+    width: auto;
+    height:100%;
+}
+div.centerContent{
+    justify-content: center;
+}
+
+

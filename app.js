@@ -156,7 +156,7 @@ function bankPay() {
     balanceElement.innerText = Number(balance) + Number(pay);
     balance = Number(balance) + Number(pay);
     currentPay.innerText = 0;
-    pay = 0;
+    pay=0;
   }
   if(!loanRepaid){
     outstandingLoanUpdate();
@@ -183,7 +183,7 @@ function deductLoan(val) {
   if (loanAmount > (pay * val)) {
     loanAmount = loanAmount - (pay * val);
     if (val < 1) {
-        pay= pay - (pay * val);
+        pay= (pay * (1-val));
     } else {
       loanAmount = loanAmount - pay;
     }

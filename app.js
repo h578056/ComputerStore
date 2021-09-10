@@ -160,6 +160,9 @@ function buyNow() {
     balance = balance - pcPrice;
     balanceElement.innerText = balance;
     loan = false;
+    alert("Congratulations on your brand new computer");
+  }else{
+      alert("Cannot afford computer");
   }
 }
 const main = () => {

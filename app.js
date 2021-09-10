@@ -7,6 +7,7 @@ let curretlySelectedPc = "";
 
 const loanButton = document.getElementById("loan");
 const balanceElement = document.getElementById("balance");
+const outstandingLoanElement= document.getElementById("outstandingLoan")
 const workBtn = document.getElementById("work");
 const currentPay = document.getElementById("currentPay");
 const bankBtn = document.getElementById("bank");
@@ -85,7 +86,8 @@ function loanMoney() {
     loan = true;
     loanRepaid = false;
     loanAmount = amount;
-    hidePayBackBtn(0.1);
+    hidePayBackBtn();
+    showOutstandingLoan();
     alert("Loan amount: " + amount + ", Granted");
   } else if (amount > balanceElement.innerText * 2) {
     alert("Max loan Amount: Balance * 2");
@@ -110,9 +112,11 @@ function bankPay() {
     currentPay.innerText = 0;
     pay = 0;
   }
+  outstandingLoanUpdate();
 }
 function payLoan() {
   deductLoan(1);
+  outstandingLoanUpdate();
 }
 function deductLoan(val) {
   if (loanAmount > pay * val) {
@@ -126,6 +130,7 @@ function deductLoan(val) {
     pay = pay - loanAmount;
     currentPay.innerText = pay;
     loanRepaid = true;
+    loanAmount = 0;
     hidePayBackBtn();
   }
 }
@@ -135,6 +140,16 @@ function hidePayBackBtn() {
   } else {
     payBackBtn.style.display = "none";
   }
+}
+function showOutstandingLoan(){
+    if(outstandingLoanElement.style.display === "none" || outstandingLoanElement.style.display === ""){
+        outstandingLoanElement.style.display="block";
+        outstandingLoanElement.innerText = "Outstanding loan: " + loanAmount
+        outstandingLoanUpdate();
+    }
+}
+function outstandingLoanUpdate(){
+    outstandingLoanElement.innerText = "Outstanding loan: " + loanAmount;
 }
 function buyNow() {
   const selectedComputer = computers[computersSelect.selectedIndex];

@@ -79,7 +79,8 @@ function loanMoney() {
     amount != null &&
     amount != "" &&
     amount <= balanceElement.innerHTML * 2 &&
-    loan != true
+    loan != true &&
+    loanRepaid === true
   ) {
     balanceElement.innerHTML = Number(balance) + Number(amount);
     balance = Number(balanceElement.innerHTML);
@@ -88,6 +89,7 @@ function loanMoney() {
     loanAmount = amount;
     hidePayBackBtn();
     showOutstandingLoan();
+    outstandingLoanUpdate();
     alert("Loan amount: " + amount + ", Granted");
   } else if (amount > balanceElement.innerText * 2) {
     alert("Max loan Amount: Balance * 2");
@@ -144,8 +146,6 @@ function hidePayBackBtn() {
 function showOutstandingLoan(){
     if(outstandingLoanElement.style.display === "none" || outstandingLoanElement.style.display === ""){
         outstandingLoanElement.style.display="block";
-        outstandingLoanElement.innerText = "Outstanding loan: " + loanAmount
-        outstandingLoanUpdate();
     }
 }
 function outstandingLoanUpdate(){

@@ -226,7 +226,6 @@ function outstandingLoanUpdate(){
 function buyNow() {
   const selectedComputer = computers[computersSelect.selectedIndex];
   const pcPrice = selectedComputer.price;
-  console.log(pcPrice);
   if (balance >= pcPrice) {
     balance = balance - pcPrice;
     balanceElement.innerText = balance;

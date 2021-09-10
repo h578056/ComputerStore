@@ -93,7 +93,6 @@ function loanMoney() {
     alert("Loan amount: " + amount + ", Granted");
   } else if (amount > balanceElement.innerText * 2) {
     alert("Max loan Amount: Balance * 2");
-    console.log(loan);
   }else {
     alert("Loan must be repaid and PC must be bought before more money can be loaned")
   }
@@ -109,24 +108,26 @@ function bankPay() {
     if (!loanRepaid) {
       deductLoan(0.1);
     }
-    balanceElement.innerText = balance + pay;
-    balance = balance + pay;
+    balanceElement.innerText = Number(balance) + Number(pay);
+    balance = Number(balance) + Number(pay);
     currentPay.innerText = 0;
     pay = 0;
   }
-  outstandingLoanUpdate();
+  if(!loanRepaid){
+    outstandingLoanUpdate();
+  }
 }
 function payLoan() {
   deductLoan(1);
   outstandingLoanUpdate();
 }
 function deductLoan(val) {
-  if (loanAmount > pay * val) {
-    loanAmount = loanAmount - pay * val;
-    if (val > 1) {
-      pay = pay * 1 - val;
+  if (loanAmount > (pay * val)) {
+    loanAmount = loanAmount - (pay * val);
+    if (val < 1) {
+        pay= pay - (pay * val);
     } else {
-      pay = pay - val;
+      loanAmount = loanAmount - pay;
     }
   } else {
     pay = pay - loanAmount;
